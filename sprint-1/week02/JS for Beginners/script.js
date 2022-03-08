@@ -45,3 +45,74 @@ function reverseArray(arr) {
     return newArray
 }
 console.log(reverseArray([2, 8, 'cool', true]));
+
+/////// TASK 6 Sort an array from lowest to highest
+
+function sortArray(arr) {
+    for (let i = 0; i < arr.length -1; i++){
+        for (let j = 0; j < arr.length-1-i; j++){
+            if (arr[j] > arr[j+1]) {
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+console.log(sortArray([2, 0, -5, 17, -1]));
+
+/////// TASK 7  Create a function that filters out negative numbers
+
+const negativeOut = (arr) => {
+    let positiveArr = arr.filter(function (el) {
+        return el >= 0;
+    });
+    return positiveArr;
+}
+console.log(negativeOut([-5, 2, -8, 0, 7, -8, -1]));
+
+/////// TASK 8 Remove the spaces found in a string
+
+const removeSpaces = (str) => {
+
+    let newString = '';
+    for (let i = 0; i < str.length; i++){
+         if (str[i] !== " ") {
+                newString+=str[i]
+            }
+    }
+    return newString;
+}
+const testString = 'zzz cccc ij     ii l';
+console.log(removeSpaces(testString));
+
+/////// TASK 9 Return a Boolean if a number is divisible by 10
+
+function isDivisibleBy10(num) {
+    if (num % 10 === 0) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+console.log(isDivisibleBy10(110));
+console.log(isDivisibleBy10(213));
+
+////////// TASK 10 Return the number of vowels in a string
+
+function numberOFVowels(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+    let count = 0;
+    for (let i = 0; i < str.length; i++){
+        for (let j = 0; j < str.length; j++){
+            if (str[i] === vowels[j]) {
+               count++;
+            }
+        }
+    }
+    return count;
+}
+console.log(numberOFVowels('hohoho Merry Christmas'));
+
